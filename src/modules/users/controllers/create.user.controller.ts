@@ -1,11 +1,10 @@
 import { StatusCodes } from 'http-status-codes'
 
-import { CreateUserRequestDto } from './dto/request/create-user.request.dto'
-
 import { HttpRequest, HttpResponse } from '@/types/http.type'
 import { AppController } from '@/types/app-controller.type'
 import { successResponse } from '@/helpers/http-success-response.helper'
 
+import { CreateUserRequestDto } from '../dtos/request/create-user.request.dto'
 import { CreateUserService } from '../services/create.user.service'
 
 export class CreateUserController implements AppController {

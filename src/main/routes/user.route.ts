@@ -1,7 +1,8 @@
 import { AppRoute, EndpointMethod } from '@/types/route.type'
-import { CreateUserRequestDto } from '@/modules/users/controllers/dto/request/create-user.request.dto'
+import { CreateUserRequestDto } from '@/modules/users/dtos/request/create-user.request.dto'
 
 import { createUserController } from '../factories/controllers/users/create.user.controller.factory'
+import { listUserController } from '../factories/controllers/users/list.user.controller.factory'
 
 /**
  * @openapi
@@ -60,6 +61,11 @@ export const userRoutes: AppRoute = {
       options: {
         bodyValidator: CreateUserRequestDto,
       },
+    },
+    {
+      method: EndpointMethod.GET,
+      path: '/',
+      controller: listUserController.handle.bind(listUserController),
     },
   ],
 }

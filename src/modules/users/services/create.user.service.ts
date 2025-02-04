@@ -1,7 +1,7 @@
-import { UserModel } from '@/modules/users/models/user.model'
 import { AppService } from '@/types/service.type'
 
-import { CreateUserRequestDto } from '../controllers/dto/request/create-user.request.dto'
+import { CreateUserRequestDto } from '../dtos/request/create-user.request.dto'
+import { UserModel } from '../models/user.model'
 
 export class CreateUserService implements AppService {
   async handle(dto: CreateUserRequestDto) {

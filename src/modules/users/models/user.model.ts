@@ -1,6 +1,6 @@
 import mongoose, { Document, Schema } from 'mongoose'
 
-export interface UserModel extends Document {
+export interface UserType extends Document {
   username: string
   password: string
   email: string
@@ -16,4 +16,4 @@ const UserSchema: Schema = new Schema({
   phone: { type: String, required: true, unique: true },
 })
 
-export const UserModel = mongoose.model<UserModel>('User', UserSchema)
+export const UserModel = mongoose.model<UserType>('User', UserSchema)
