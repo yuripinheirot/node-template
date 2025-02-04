@@ -1,0 +1,22 @@
+{
+  "info": {
+    "title": "Resolve",
+    "version": "1.0.0"
+  },
+  "securityDefinitions": {
+    "BasicAuth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "BasicAuth": []
+    }
+  ],
+  "swagger": "2.0",
+  "paths": {},
+  "definitions": {},
+  "responses": {},
+  "parameters": {},
+  "tags": []
+}

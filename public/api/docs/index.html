@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Important: must specify -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Important: rapi-doc uses utf8 characters -->
+    <script
+      type="module"
+      src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"
+    ></script>
+  </head>
+  <body>
+    <rapi-doc
+      spec-url="./swagger.json"
+      allow-spec-file-download="true"
+      allow-spec-url-load="false"
+      allow-spec-file-load="false"
+      header-color="#fff"
+      primary-color="#3C7852"
+      theme="light"
+    >
+      <div slot="overview">
+        <h1>Node Template API</h1>
+        <p>
+          The Node Template API is a modern Node.js API template with
+          TypeScript, Express, MongoDB, and Redis.
+        </p>
+        <p>
+          This API aims to provide a robust foundation for building scalable and
+          maintainable web services, with built-in support for TypeScript,
+          database integration, caching, and comprehensive API documentation.
+        </p>
+      </div>
+      <img
+        slot="logo"
+        src="./logo.svg"
+        style="width: 196px; height: 50px"
+        alt="API Logo"
+      />
+    </rapi-doc>
+  </body>
+</html>

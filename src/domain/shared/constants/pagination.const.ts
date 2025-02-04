@@ -1,0 +1,1 @@
+export const DEFAULT_PAGINATION_LENGTH = 10

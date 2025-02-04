@@ -1,0 +1,55 @@
+version: '3.9'
+
+volumes:
+  app-vol:
+  node-modules-vol:
+  mongodb-vol:
+
+networks:
+  node-template-network:
+    name: node-template-network
+
+services:
+  base: &base
+    hostname: base
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+      - node-modules-vol:/home/node/app/node_modules
+    networks:
+      - node-template-network
+
+  app:
+    <<: *base
+    hostname: app
+    env_file:
+      - ./.env.local
+    ports:
+      - 2024:2024
+      - 9222:9222
+    command: ash -c "pnpm i && pnpm run dev"
+    depends_on:
+      mongodb:
+        condition: service_started
+
+  mongodb:
+    hostname: mongodb
+    image: bitnami/mongodb:5.0
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb-vol:/home/node/app/data/mongodb
+    environment:
+      MONGODB_EXTRA_FLAGS: "--quiet"
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_REPLICA_SET_KEY: primary
+      MONGODB_DATABASE: node-template-db-dev
+      MONGODB_ROOT_PASSWORD: root
+      MONGODB_USERNAME: root
+      MONGODB_PASSWORD: root
+    networks:
+      - node-template-network
