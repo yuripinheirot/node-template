@@ -25,3 +25,5 @@ export class LoggerProvider {
     winstonLogger.warn(message, metadata)
   }
 }
+
+export const logger = new LoggerProvider()

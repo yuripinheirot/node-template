@@ -1,7 +1,7 @@
 import { plainToClass } from 'class-transformer'
 import { validate } from 'class-validator'
 
-import { logger } from '@/main/factories/providers/logger-provider.factory'
+import { logger } from '@/providers/logger'
 import { formatValidationErrors } from '@/utils/format-validation-errors.utils'
 import { BadRequestError } from '@/errors'
 

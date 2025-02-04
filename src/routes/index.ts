@@ -3,8 +3,8 @@ import { Express } from 'express'
 import { userRoutes } from './user.route'
 import { statusRoutes } from './status.route'
 
-import { env } from '../configs/envs.config'
-import { routeAdapter } from '../adapters/route.adapter'
+import { env } from '../main/configs/envs.config'
+import { routeAdapter } from '../main/adapters/route.adapter'
 
 const { API_PREFIX } = env
 

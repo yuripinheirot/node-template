@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 import { env } from './envs.config'
 
-import { logger } from '../factories/providers/logger-provider.factory'
+import { logger } from '@/providers/logger'
 
 export const connectDB = async () => {
   try {

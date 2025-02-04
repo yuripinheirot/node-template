@@ -11,7 +11,7 @@ export const statusRoutes: AppRoute = {
       controller: () => {
         return successResponse({
           statusCode: StatusCodes.OK,
-          body: { message: 'Server is running' },
+          body: { message: 'Server is up and running!' },
         })
       },
     },

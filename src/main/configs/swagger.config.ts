@@ -2,7 +2,7 @@ import swaggerJSDoc from 'swagger-jsdoc'
 
 import fs from 'fs'
 
-import { logger } from '../factories/providers/logger-provider.factory'
+import { logger } from '@/providers/logger'
 
 export function generateSwaggerDocumentation(): void {
   const options: swaggerJSDoc.Options = {

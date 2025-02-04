@@ -4,7 +4,7 @@ import { controllerAdapter } from './controller.adapter'
 
 import { AppRoute } from '@/types/route.type'
 
-import { logger } from '../factories/providers/logger-provider.factory'
+import { logger } from '@/providers/logger'
 
 export const routeAdapter = (routes: AppRoute): Router => {
   const router = Router()

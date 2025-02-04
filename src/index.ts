@@ -4,7 +4,8 @@ import 'es6-shim'
 
 import { buildApp } from './main/app'
 import { env } from './main/configs/envs.config'
-import { logger } from './main/factories/providers/logger-provider.factory'
+
+import { logger } from '@/providers/logger'
 
 buildApp().then((app) => {
   app.listen(env.PORT, () => {
