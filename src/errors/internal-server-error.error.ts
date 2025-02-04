@@ -1,6 +1,6 @@
 import { BaseHttpError } from './base-http.error'
 
-import { defaultMessagesApp } from '@/domain/shared/constants/default-messages.const'
+import { defaultMessagesApp } from '@/constants/default-messages.const'
 
 export class InternalServerError extends BaseHttpError {
   constructor(message = defaultMessagesApp.internalServerErrorResponse) {

@@ -1,8 +1,8 @@
 import { StatusCodes } from 'http-status-codes'
 
-import { defaultMessagesApp } from '@/domain/shared/constants/default-messages.const'
+import { defaultMessagesApp } from '@/constants/default-messages.const'
 
-import { HttpResponse, ResponseParams } from '../protocols/http.type'
+import { HttpResponse, ResponseParams } from '../types/http.type'
 
 export const successResponse = (
   params: ResponseParams = {

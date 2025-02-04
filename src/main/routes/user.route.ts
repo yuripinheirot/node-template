@@ -1,5 +1,5 @@
-import { CreateUserRequestDto } from '@/presentation/controllers/users/dto/request/create-user.request.dto'
-import { AppRoute, EndpointMethod } from '@/domain/shared/types/route.type'
+import { AppRoute, EndpointMethod } from '@/types/route.type'
+import { CreateUserRequestDto } from '@/modules/users/controllers/dto/request/create-user.request.dto'
 
 import { createUserController } from '../factories/controllers/users/create.user.controller.factory'
 

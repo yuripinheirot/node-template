@@ -1,7 +1,4 @@
-import {
-  HttpRequest,
-  HttpResponse,
-} from '../../presentation/protocols/http.type'
+import { HttpRequest, HttpResponse } from '../../types/http.type'
 
 type ResponseTypes = HttpResponse | void
 

@@ -1,7 +1,7 @@
 import { StatusCodes } from 'http-status-codes'
 
-import { AppRoute, EndpointMethod } from '@/domain/shared/types/route.type'
-import { successResponse } from '@/presentation/helpers/http-success-response.helper'
+import { AppRoute, EndpointMethod } from '@/types/route.type'
+import { successResponse } from '@/helpers/http-success-response.helper'
 export const statusRoutes: AppRoute = {
   basePath: '/status',
   endpoints: [

@@ -1,5 +1,5 @@
-import { HttpRequest } from '@/presentation/protocols/http.type'
-import { RouteAdapterOptions } from '@/domain/shared/types/route.type'
+import { HttpRequest } from '@/types/http.type'
+import { RouteAdapterOptions } from '@/types/route.type'
 
 import { requestQueryValidator } from '../validators/request-query.validator'
 import { requestParamsValidator } from '../validators/request-params.validator'
