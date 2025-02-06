@@ -13,7 +13,7 @@ export const winstonLogger = createLogger({
         format.metadata(),
         format.timestamp(),
         format.printf(({ timestamp, level, message, metadata }) => {
-          return `[${timestamp}] ${level}: ${message}. ${Object.keys(metadata).length ? JSON.stringify(metadata) : ''}`
+          return `[${timestamp}] ${level}: ${message}. ${Object.keys(metadata as object).length ? JSON.stringify(metadata) : ''}`
         })
       ),
       level: env.NODE_ENV === 'production' ? 'info' : 'debug',

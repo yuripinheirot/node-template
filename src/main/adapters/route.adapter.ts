@@ -3,7 +3,6 @@ import { Router } from 'express'
 import { controllerAdapter } from './controller.adapter'
 
 import { AppRoute } from '@/types/route.type'
-
 import { logger } from '@/providers/logger'
 
 export const routeAdapter = (routes: AppRoute): Router => {
