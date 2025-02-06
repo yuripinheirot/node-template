@@ -9,7 +9,11 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["./node_modules/@types", "./src/types", "class-validator"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "src/shared/types",
+      "class-validator"
+    ],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,

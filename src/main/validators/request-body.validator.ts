@@ -2,8 +2,8 @@ import { plainToClass } from 'class-transformer'
 import { validate } from 'class-validator'
 import { Request } from 'express'
 
-import { formatValidationErrors } from '@/utils/format-validation-errors.utils'
-import { BadRequestError } from '@/errors'
+import { formatValidationErrors } from '@/shared/utils/format-validation-errors.utils'
+import { BadRequestError } from '@/shared/errors'
 
 export const requestBodyValidator = async (
   validator: new () => unknown,

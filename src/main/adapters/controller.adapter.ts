@@ -3,13 +3,13 @@ import { StatusCodes } from 'http-status-codes'
 
 import { requestValidatorsAdapter } from './validators.adapter'
 
-import { HttpRequest } from '@/types/http.type'
-import { RouteAdapterOptions } from '@/types/route.type'
-import { successResponse } from '@/helpers/http-success-response.helper'
-import { errorResponse } from '@/helpers/http-error-response.helper'
+import { HttpRequest } from '@/shared/types/http.type'
+import { RouteAdapterOptions } from '@/shared/types/route.type'
+import { successResponse } from '@/shared/helpers/http-success-response.helper'
+import { errorResponse } from '@/shared/helpers/http-error-response.helper'
 import { logger } from '@/providers/logger'
 
-import { BaseHttpError } from '../../errors/base-http.error'
+import { BaseHttpError } from '../../shared/errors/base-http.error'
 import { ControllerType } from '../types/controller.type'
 
 const handleJsonResponse = (res: Response, httpResponse: any) => {

@@ -1,8 +1,11 @@
-import { AppRoute, EndpointMethod } from '@/types/route.type'
+import { AppRoute, EndpointMethod } from '@/shared/types/route.type'
 import { CreateUserRequestDto } from '@/modules/users/dtos/request/create-user.request.dto'
 
-import { createUserController } from '../modules/users/factories/controllers/create.user.controller.factory'
-import { listUserController } from '../modules/users/factories/controllers/list.user.controller.factory'
+import { createUserControllerFactory } from '../modules/users/factories/controllers/create.user.controller.factory'
+import { listUserControllerFactory } from '../modules/users/factories/controllers/list.user.controller.factory'
+
+const createUserController = createUserControllerFactory()
+const listUserController = listUserControllerFactory()
 
 export const userRoutes: AppRoute = {
   basePath: '/users',
@@ -10,7 +13,7 @@ export const userRoutes: AppRoute = {
     {
       method: EndpointMethod.POST,
       path: '/',
-      controller: createUserController.handle.bind(createUserController),
+      controller: (req) => createUserController.handle(req!),
       options: {
         bodyValidator: CreateUserRequestDto,
       },
@@ -18,7 +21,7 @@ export const userRoutes: AppRoute = {
     {
       method: EndpointMethod.GET,
       path: '/',
-      controller: listUserController.handle.bind(listUserController),
+      controller: () => listUserController.handle(),
     },
   ],
 }

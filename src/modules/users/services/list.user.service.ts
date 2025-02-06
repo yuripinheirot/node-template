@@ -1,5 +1,5 @@
 import { UserModel } from '@/modules/users/models/user.model'
-import { AppService } from '@/types/service.type'
+import { AppService } from '@/shared/types/service.type'
 
 export class ListUserService implements AppService {
   async handle() {

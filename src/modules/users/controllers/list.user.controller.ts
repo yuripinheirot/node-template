@@ -1,6 +1,6 @@
-import { HttpResponse } from '@/types/http.type'
-import { AppController } from '@/types/app-controller.type'
-import { successResponse } from '@/helpers/http-success-response.helper'
+import { HttpResponse } from '@/shared/types/http.type'
+import { AppController } from '@/shared/types/app-controller.type'
+import { successResponse } from '@/shared/helpers/http-success-response.helper'
 
 import { ListUserService } from '../services/list.user.service'
 

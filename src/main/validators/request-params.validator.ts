@@ -2,8 +2,8 @@ import { plainToClass } from 'class-transformer'
 import { validate } from 'class-validator'
 
 import { logger } from '@/providers/logger'
-import { formatValidationErrors } from '@/utils/format-validation-errors.utils'
-import { BadRequestError } from '@/errors'
+import { formatValidationErrors } from '@/shared/utils/format-validation-errors.utils'
+import { BadRequestError } from '@/shared/errors'
 
 export const requestParamsValidator = async (
   validator: new () => any,

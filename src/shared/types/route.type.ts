@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { NextFunction, Response, Request } from 'express'
 
-import { AppController } from '@/types/app-controller.type'
+import { AppController } from '@/shared/types/app-controller.type'
 
 type RouteOptions = {
   paramsValidator?: any

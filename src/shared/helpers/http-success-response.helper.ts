@@ -1,6 +1,6 @@
 import { StatusCodes } from 'http-status-codes'
 
-import { defaultMessagesApp } from '@/constants/default-messages.const'
+import { defaultMessagesApp } from '@/shared/constants/default-messages.const'
 
 import { HttpResponse, ResponseParams } from '../types/http.type'
 

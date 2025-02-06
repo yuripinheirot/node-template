@@ -1,4 +1,4 @@
-import { HttpRequest, HttpResponse } from '../../types/http.type'
+import { HttpRequest, HttpResponse } from '../../shared/types/http.type'
 
 type ResponseTypes = HttpResponse | void
 

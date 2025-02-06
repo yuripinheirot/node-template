@@ -1,4 +1,4 @@
-import { AppService } from '@/types/service.type'
+import { AppService } from '@/shared/types/service.type'
 
 import { CreateUserRequestDto } from '../dtos/request/create-user.request.dto'
 import { UserModel } from '../models/user.model'

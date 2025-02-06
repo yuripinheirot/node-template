@@ -30,12 +30,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: production
+      target: development
     env_file:
       - ./.env.local
     ports:
-      - 4433:4433
-    command: node dist/index.js
+      - 2024:2024
+    command: "pnpm run dev"
     restart: always
     depends_on:
       mongodb:
