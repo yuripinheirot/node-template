@@ -15,7 +15,7 @@
     "strictPropertyInitialization": false,
     "removeComments": true,
     "rootDir": "src",
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
       "@/*": ["*"]
     }

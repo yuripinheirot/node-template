@@ -15,34 +15,39 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: development
-    working_dir: /home/node/app
+      target: build
+    working_dir: /usr/src/app
     volumes:
-      - ./:/home/node/app
-      - node-modules-vol:/home/node/app/node_modules
+      - .:/usr/src/app
+      - node-modules-vol:/usr/src/app/node_modules
     networks:
       - node-template-network
 
   app:
     <<: *base
     hostname: app
+    image: node-template
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
     env_file:
       - ./.env.local
     ports:
-      - 2024:2024
-      - 9222:9222
-    command: ash -c "pnpm i && pnpm run dev"
+      - 4433:4433
+    command: node dist/index.js
+    restart: always
     depends_on:
       mongodb:
-        condition: service_started
+        condition: service_healthy
 
   mongodb:
     hostname: mongodb
     image: bitnami/mongodb:5.0
     ports:
-      - "27018:27017"
+      - "27017:27017"
     volumes:
-      - mongodb-vol:/home/node/app/data/mongodb
+      - mongodb-vol:/data/db
     environment:
       MONGODB_EXTRA_FLAGS: "--quiet"
       MONGODB_REPLICA_SET_MODE: primary
@@ -53,3 +58,9 @@ services:
       MONGODB_PASSWORD: root
     networks:
       - node-template-network
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: always
